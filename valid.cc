@@ -17,10 +17,9 @@ void userCheck() {
     //Child process for checking user
     pid = fork();
     if (pid == 0) {
-        //har *pwd = getenv("PWD");
-        //std::string userCheck = pwd;
-        std::string userCheck = " ";
-        userCheck += "userCheck.sh";
+        char *pwd = getenv("PWD");
+        std::string userCheck = pwd;
+        userCheck += "/userCheck.sh";
         char *args[2];
         args[0] = (char *)userCheck.c_str();
         args[1] = NULL;
