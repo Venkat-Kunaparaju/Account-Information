@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo "2" >> out.txt
+echo "3" >> out.txt
 
 exit 0
