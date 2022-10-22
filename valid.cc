@@ -1,7 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 
-int userCheck() {
+int userCheck(std::string user) {
     pid_t pid;
     int status;
 
@@ -21,9 +21,10 @@ int userCheck() {
         char *pwd = getenv("PWD");
         std::string usernameCheck = pwd;
         usernameCheck += "/userCheck.sh";
-        char *args[2];
+        char *args[3];
         args[0] = (char *)usernameCheck.c_str();
-        args[1] = NULL;
+        args[1] = (char *)user.c_str();
+        args[2] = NULL;
         execvp(args[0], args);
         std::cerr << "excvp error";
         exit(1);

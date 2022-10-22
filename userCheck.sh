@@ -1,6 +1,6 @@
 #!/bin/bash
 
-check=$(cat accountStorage.txt | grep "[|]a[-]")
+check=$(cat accountStorage.txt | grep "[|]$1[-]")
 match=${#check}
 if [ $match -gt 0 ]; then
     echo 1

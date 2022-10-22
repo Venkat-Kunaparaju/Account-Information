@@ -5,7 +5,7 @@
 
 //TODO: get current directory
 int main() {
-    if(userCheck()) {
+    if(userCheck("check")) {
         std::cout << "UserTrue";
     }
     else {
