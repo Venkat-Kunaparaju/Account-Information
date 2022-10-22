@@ -11,5 +11,11 @@ int main() {
     else {
         std::cout << "UserFalse";
     }
+    if(loginCheck("check", "b")) {
+        std::cout << "UserTrue";
+    }
+    else {
+        std::cout << "UserFalse";
+    }
 
 }
