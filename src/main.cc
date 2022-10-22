@@ -3,7 +3,6 @@
 #include "valid.cc"
 
 
-//TODO: get current directory
 int main() {
     if(userCheck("check")) {
         std::cout << "UserTrue";
