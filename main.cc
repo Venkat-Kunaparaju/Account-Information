@@ -6,5 +6,6 @@
 //TODO: get current directory
 int main() {
     userCheck();
+    std::cout << "check";
 
 }
