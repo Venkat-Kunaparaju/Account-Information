@@ -1,7 +1,8 @@
 #include <iostream>
 #include <unistd.h>
+
 void userCheck() {
-        pid_t pid;
+    pid_t pid;
     int status;
 
     //Save default standard out
@@ -29,6 +30,7 @@ void userCheck() {
     
     }
     //Waits for child process to finish
+    std::cerr << "Check";
     pid = waitpid(pid, &status, WUNTRACED);
 
     //Get output of child from pipe
@@ -45,3 +47,4 @@ void userCheck() {
     //Checks for parent execution
     std::cout << "Parent";
 }
+
