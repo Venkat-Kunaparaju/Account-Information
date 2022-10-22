@@ -11,11 +11,23 @@ int main() {
     else {
         std::cout << "UserFalse";
     }
+    std::cout << "\n";
+
     if(loginCheck("check", "b")) {
-        std::cout << "UserTrue";
+        std::cout << "LoginTrue";
     }
     else {
-        std::cout << "UserFalse";
+        std::cout << "LoginFalse";
     }
+    std::cout << "\n";
+    
+    int *strength = new int[5];
+    passCheck("A^", strength);
+
+    for (int i = 0; i < 5; i++) {
+        std::cout << strength[i];
+    }
+
+
 
 }

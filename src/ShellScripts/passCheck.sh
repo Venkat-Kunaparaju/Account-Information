@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 scoreLength=0
 check=$1
 match=${#check}
@@ -8,7 +9,7 @@ if [ $match -gt 8 ]; then
 fi
 
 scoreSpecial=0
-check=$(echo $1 | grep "[\!\@\$\%\^\&\*\(\)]")
+check=$(echo $1 | grep "[!@$%^&*()]")
 match=${#check}
 if [ $match -gt 0 ]; then
     scoreSpecial=1
@@ -35,6 +36,6 @@ if [ $match -gt 0 ]; then
     scoreLower=1
 fi
 
-echo $scoreLength $scoreSpecial $scoreNumber $scoreUpper $scoreLower
+echo $scoreLength$scoreSpecial$scoreNumber$scoreUpper$scoreLower
 
-exit $?w
+exit $?
