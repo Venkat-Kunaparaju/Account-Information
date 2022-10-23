@@ -23,7 +23,7 @@ void login() {
         }
 
     } while (!login);
- 
+
 }
 void signUp() {
     std::string userName;
@@ -38,19 +38,34 @@ void signUp() {
         std::cout << "Enter Password\n";
         std::cin >> password;
 
-        if (!userCheck(userName) or !userCheck(email)) {
-            std::cout << "Username invalid\n";
+        if (userCheck(userName) or userCheck(email)) {
+            std::cout << "Username or email is already in use\n";
             continue;
         }
         int *strength = new int[5];
         passCheck(password, strength);
-        if (!strength[0]) {
-            std::cout << "Password too short\n";
+        if (!strength[0] || !strength[1] || !strength[2] || !strength[3] || !strength[4]) {
+            if (!strength[0]) {
+                std::cout << "Password is too short\n";
+            }
+            if (!strength[1]) {
+                std::cout << "Password has no special character \"!@$%^&*()\"\n";
+            }
+            if (!strength[2]) {
+                std::cout << "Password has no number\n";
+            }
+            if (!strength[3]) {
+                std::cout << "Password has no upper case character\n";
+            }
+            if (!strength[4]) {
+                std::cout << "Password has no lower case character\n";
+            }
+            continue;
         }
-        
-
-
+        writeFile(userName, email, password);
+        break;
     } while (true);
+    std::cout << "Sign up successful! Redirecting...\n";
 
 }
 int main() {
@@ -65,7 +80,7 @@ int main() {
             login();
         }
         else if (choice == 2) {
-
+            signUp();
         }
         else if (choice == 3) {
             std::cout << "GOODBYE!\n";

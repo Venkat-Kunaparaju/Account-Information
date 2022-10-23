@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 
+//Returns 0 if user does not exist, 1 if does exist
 int userCheck(std::string user) {
     pid_t pid;
     int status;
@@ -138,8 +139,9 @@ void passCheck(std::string pass, int *ret) {
     close(defaultOut);
 
 }
-void write(std::string username, std::string email, std::string password) {
-    if(!fork()) {
+void writeFile(std::string username, std::string email, std::string password) {
+    int ret = fork();
+    if(!ret) {
         char *pwd = getenv("PWD");
         std::string usernameCheck = pwd;
         usernameCheck +=  "/ShellScripts/writeToFile.sh";
