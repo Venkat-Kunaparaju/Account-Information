@@ -2,30 +2,42 @@
 #include <unistd.h>
 #include "valid.cc"
 
+void login() {
+    int login = 0;
+    do {
+        std::string userName;
+        std::cout << "Enter Username\n";
+        std::cin >> userName;
+        std::cout << "Enter Username\n";
 
-int main() {
-    if(userCheck("check")) {
-        std::cout << "UserTrue";
-    }
-    else {
-        std::cout << "UserFalse";
-    }
-    std::cout << "\n";
-
-    if(loginCheck("check", "b")) {
-        std::cout << "LoginTrue";
-    }
-    else {
-        std::cout << "LoginFalse";
-    }
-    std::cout << "\n";
     
-    int *strength = new int[5];
-    passCheck("A^", strength);
 
-    for (int i = 0; i < 5; i++) {
-        std::cout << strength[i];
-    }
+    } while (!login);
+}
+int main() {
+    int choice;
+    std::cout << "Simple Accont Information\n";
+    do {
+        std::cout << "1. Login\n2. Sign In\n3. Exit\n";
+        std::cin >> choice;
+
+
+        if (choice == 1) {
+
+
+        }
+        else if (choice == 2) {
+
+        }
+        else if (choice == 3) {
+            std::cout << "GOODBYE!\n";
+        }
+        else {
+            std::cout << "Invalid choice\n";
+        }
+
+
+    } while(choice != 3);
 
 
 

@@ -45,7 +45,7 @@ int userCheck(std::string user) {
 
     return ret;
 }
-
+//Returns 0 if login info not found, 1 if found
 int loginCheck(std::string user, std::string pass) {
     pid_t pid;
     int status;
@@ -128,7 +128,7 @@ void passCheck(std::string pass, int *ret) {
     int bytes = read(fdpipe[0], out, 5);
     close(fdpipe[0]);
 
-    //0->
+    
     for (int i = 0; i < bytes; i++) {
         ret[i] = (int) (out[i] - 48);
     }
