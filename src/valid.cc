@@ -128,7 +128,7 @@ void passCheck(std::string pass, int *ret) {
     int bytes = read(fdpipe[0], out, 5);
     close(fdpipe[0]);
 
-    
+    //Length, Special, Number, Upper, Lower
     for (int i = 0; i < bytes; i++) {
         ret[i] = (int) (out[i] - 48);
     }
@@ -139,6 +139,19 @@ void passCheck(std::string pass, int *ret) {
 
 }
 void write(std::string username, std::string email, std::string password) {
-    
+    if(!fork()) {
+        char *pwd = getenv("PWD");
+        std::string usernameCheck = pwd;
+        usernameCheck +=  "/ShellScripts/writeToFile.sh";
+        char *args[5];
+        args[0] = (char *)usernameCheck.c_str();
+        args[1] = (char *)username.c_str();
+        args[2] = (char *)email.c_str();
+        args[3] = (char *)password.c_str();
+        args[4] = NULL;
+        execvp(args[0], args);
+        std::cerr << "excvp error";
+        exit(1);
+    }
 }
 

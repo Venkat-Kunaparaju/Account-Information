@@ -38,6 +38,15 @@ void signUp() {
         std::cout << "Enter Password\n";
         std::cin >> password;
 
+        if (!userCheck(userName) or !userCheck(email)) {
+            std::cout << "Username invalid\n";
+            continue;
+        }
+        int *strength = new int[5];
+        passCheck(password, strength);
+        if (!strength[0]) {
+            std::cout << "Password too short\n";
+        }
         
 
 
