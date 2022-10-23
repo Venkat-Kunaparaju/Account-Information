@@ -75,7 +75,6 @@ int main() {
         std::cout << "1. Log in\n2. Sign Up\n3. Exit\n";
         std::cin >> choice;
 
-
         if (choice == 1) {
             login();
         }
@@ -89,9 +88,6 @@ int main() {
             std::cout << "Invalid choice\n";
         }
 
-
     } while(choice != 3);
-
-
 
 }
