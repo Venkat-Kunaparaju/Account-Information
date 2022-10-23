@@ -138,4 +138,7 @@ void passCheck(std::string pass, int *ret) {
     close(defaultOut);
 
 }
+void write(std::string username, std::string email, std::string password) {
+    
+}
 

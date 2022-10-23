@@ -25,7 +25,25 @@ void login() {
     } while (!login);
  
 }
-void signUp
+void signUp() {
+    std::string userName;
+    std::string email;
+    std::string password;
+    do {
+        
+        std::cout << "Enter Username\n";
+        std::cin >> userName;
+        std::cout << "Enter Email\n";
+        std::cin >> email;
+        std::cout << "Enter Password\n";
+        std::cin >> password;
+
+        
+
+
+    } while (true);
+
+}
 int main() {
     int choice;
     std::cout << "Simple Accont Information\n";

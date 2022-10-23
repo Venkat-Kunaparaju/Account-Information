@@ -7,7 +7,7 @@
     
     
     Sign up
-        -Validate that email or username does not already exist (grep file [sh])
+        -Validate that email and username does not already exist (grep file [sh])
         -Validate that the password is strong based on parameters (grep characters [sh])
             -Use pipes to read the output of the output shell scripts (output to [1] and read from [0])
             -File Storing Cred Format -> |username-password|email-password| (write to file [c++])
